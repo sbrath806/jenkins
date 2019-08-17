@@ -6,7 +6,7 @@ node {
     // Clone repo
 	git branch: 'master', 
 	credentialsId: 'github', 
-	url: 'https://github.com/javahometech/myweb'
+	url: 'https://github.com/sbrath806/jenkins'
    
    }
    
@@ -25,7 +25,7 @@ node {
 	   sh "${mvn} clean package deploy"
    }
    
-   stage('deploy-dev'){
+   /*stage('deploy-dev'){
        def tomcatDevIp = '172.31.28.172'
 	   def tomcatHome = '/opt/tomcat8/'
 	   def webApps = tomcatHome+'webapps/'
@@ -37,7 +37,7 @@ node {
           sh "ssh ec2-user@${tomcatDevIp} ${tomcatStop}"
 		  sh "ssh ec2-user@${tomcatDevIp} ${tomcatStart}"
        }
-   }
+   }*/
    /*stage('Email Notification'){
 		mail bcc: '', body: """Hi Team, You build successfully deployed
 		                       Job URL : ${env.JOB_URL}
