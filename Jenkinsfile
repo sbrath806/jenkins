@@ -23,6 +23,7 @@ node {
 	   // Build using maven
 	   
 	   //sh "${mvn} clean package deploy"
+	   bat "${mvn} clean package deploy"
    }
    
    /*stage('deploy-dev'){
